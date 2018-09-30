@@ -1,5 +1,5 @@
 {
-    "name": "francodacosta/phMagick",
+    "name": "chaitanya-c/phMagick",
     "type": "library",
     "description": "image manipulation with php and ImageMagick",
     "keywords": ["ImageMagick","Image manipulation", "thumbnail", "resize", "image resize", "gd", "imagemagick", "imagick"],
