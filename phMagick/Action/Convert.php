@@ -14,6 +14,7 @@ class Convert extends Action
 
     private $optimize = false;
     private $quality = null;
+    private $samplingFactor = null;
 
     public function optimize()
     {
@@ -26,6 +27,14 @@ class Convert extends Action
         $this->quality = $number;
         return $this;
     }
+
+    public function samplingFactor($samplingFactor)
+    {
+        // TODO add validation
+        $this->samplingFactor = $samplingFactor;
+        return $this;
+    }
+
     /**
      * gets the shell command to be executed
      * @see phMagick\Core.Action::getShellCommand()
@@ -44,6 +53,10 @@ class Convert extends Action
 
         if (null !== $this->quality) {
             $command->param('-quality', $this->quality);
+        }
+
+        if (null !== $this->samplingFactor) {
+            $command->param('-sampling-factor', $this->samplingFactor);
         }
 
         $command->file($this->getDestination());
